@@ -16,9 +16,16 @@
 			ini_set("display_errors", 0 );
                 
 		if( $_POST['editor1'] &&  $_GET['arquivo']  )
-		{			
+		{				
+			$nome_arquivo = $_GET['arquivo'];
 
-			$arquivo = fopen( $_GET['arquivo'] , "w+");
+			if( strpos($nome_arquivo, '.html' ) === false)
+			{
+				$nome_arquivo = $nome_arquivo.".html";
+			}
+			
+			$arquivo = fopen( $nome_arquivo , "w+");
+
 			fwrite($arquivo,   $_POST['editor1']  );
 		}
 
