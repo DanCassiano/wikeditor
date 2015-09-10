@@ -44,16 +44,15 @@
                 ini_set('display_errors', 0);
                 error_reporting( 0 );
                 $arquivos = glob("*.html");
-					  		foreach ( $arquivos as $arquivo) 
-					  		{
-					  			?>
-									<li class="list-group-item"> 
-										<a class="link" href="<?php echo $arquivo ?>"><?php echo $arquivo ?></a> <a href="editor.php?arquivo=<?php echo $arquivo ?>" class="btn-editor"> <span class="glyphicon glyphicon-pencil"></span> </a> </li>									
-					  			<?php    						
-							}
-					  	 ?>
+		  		foreach ( $arquivos as $arquivo) 
+		  		{
 
-          
+		  			?>
+						<li class="list-group-item"> 
+							<a class="link" href="<?php echo $arquivo ?>"><?php echo str_replace('.html', "", $arquivo) ?></a> <a href="editor.php?arquivo=<?php echo $arquivo ?>" class="btn-editor"> <span class="glyphicon glyphicon-pencil"></span> </a> </li>									
+		  			<?php    						
+				}
+		  	 ?>          
           </ul>
        
 				</div>
